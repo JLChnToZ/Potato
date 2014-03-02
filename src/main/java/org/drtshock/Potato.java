@@ -19,7 +19,7 @@ public class Potato implements Tuber {
 
 	public boolean prepare() {
 		this.addCondiments("sour cream", "chives", "butter", "crumbled bacon", "grated cheese", "ketchup", "salt", "tabasco");
-		this.cook(600000); // Cook the potato for 6 minutes
+		this.cook(600000); // Cook the potato for 10 minutes
 		return this.isDelicious();
 	}
 
@@ -41,15 +41,10 @@ public class Potato implements Tuber {
 		return temperature > 25; // Assume above 25 degree celsius is cooked.
 	}
 
-	public boolean isBaked() {
-		if(this.isCooked()) return true;
-		else return false;
-	}
-
 	@Override
 	public boolean isDelicious() {
-		if(isBaked()) return true; // this way we could move on to our condiments. =D
-		else return false; // you don't eat a raw potato, don't you?
+		if(this.isCooked()) return true; // this way we could move on to our condiments. =D
+		else return false; // It won't be delicious if the potato is cold.
 	}
 
 	@Override
